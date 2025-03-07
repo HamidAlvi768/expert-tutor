@@ -1,14 +1,22 @@
 <?php
 function renderStatItem($icon, $iconColor, $number, $suffix, $label) {
+    if (empty($icon) || empty($number) || empty($label)) {
+        return;
+    }
     ?>
-    <div class="col-md-3 col-sm-6">
+    <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
         <div class="stat-item">
             <div class="stat-icon">
-                <i class="<?php echo $icon; ?>" style="color: <?php echo $iconColor; ?>;"></i>
+                <i class="<?php echo htmlspecialchars($icon); ?>" style="color: <?php echo htmlspecialchars($iconColor); ?>;"></i>
             </div>
             <div class="stat-content">
-                <h3><span class="stat-number" data-value="<?php echo $number; ?>" data-suffix="<?php echo $suffix; ?>"><?php echo $number . $suffix; ?></span></h3>
-                <p><?php echo $label; ?></p>
+                <h3>
+                    <span class="stat-number" data-value="<?php echo htmlspecialchars($number); ?>" 
+                          data-suffix="<?php echo htmlspecialchars($suffix); ?>">
+                        <?php echo htmlspecialchars($number . $suffix); ?>
+                    </span>
+                </h3>
+                <p><?php echo htmlspecialchars($label); ?></p>
             </div>
         </div>
     </div>
@@ -16,13 +24,18 @@ function renderStatItem($icon, $iconColor, $number, $suffix, $label) {
 }
 
 function renderStatsSection($stats) {
+    if (!is_array($stats) || empty($stats)) {
+        return;
+    }
     ?>
     <section class="stats-section">
         <div class="container">
-            <div class="row g-4 justify-content-center align-items-stretch">
+            <div class="row g-4">
                 <?php
                 foreach ($stats as $stat) {
-                    renderStatItem($stat[0], $stat[1], $stat[2], $stat[3], $stat[4]);
+                    if (is_array($stat) && count($stat) >= 5) {
+                        renderStatItem($stat[0], $stat[1], $stat[2], $stat[3], $stat[4]);
+                    }
                 }
                 ?>
             </div>

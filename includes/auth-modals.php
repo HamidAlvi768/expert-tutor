@@ -1,4 +1,23 @@
 <?php
+function renderEmailVerificationScreen() {
+    ?>
+    <div class="email-verification-screen" style="display: none;">
+        <div class="verification-overlay"></div>
+        <div class="verification-card">
+            <div class="verification-icon">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <h2>Check your email</h2>
+            <p class="verification-text">We have sent a verification link to</p>
+            <div class="verified-email">example@domain.com</div>
+            <p class="verification-subtext">Please check your email and click on the verification link to continue.</p>
+            <button class="btn btn-primary verification-btn">Continue</button>
+            <a href="#" class="change-email-link">Change email</a>
+        </div>
+    </div>
+    <?php
+}
+
 function renderAuthModal($type = 'login') {
     $isLogin = $type === 'login';
     $modalId = $isLogin ? 'loginModal' : 'signupModal';
@@ -38,7 +57,7 @@ function renderAuthModal($type = 'login') {
                             </div>
                             
                             <!-- Auth Form -->
-                            <form class="auth-form <?php echo $type; ?>-form">
+                            <form class="auth-form <?php echo $type; ?>-form" onsubmit="showEmailVerification(event)">
                                 <?php if (!$isLogin): ?>
                                 <div class="form-group mb-3">
                                     <div class="input-group">
