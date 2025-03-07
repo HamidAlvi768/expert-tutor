@@ -1,12 +1,18 @@
 <?php
-// Start the session if needed
-session_start();
+// Only start session if one hasn't been started already
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Default logo settings if not provided
+$logo_src = isset($custom_logo) ? $custom_logo : 'assets/images/logo.png';
+$logo_alt = isset($custom_logo_alt) ? $custom_logo_alt : 'Assignment Connect';
 ?>
 <header class="main-header">
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="index.php">
-                <img src="assets/images/logo.png" alt="Assignment Connect" class="logo">
+                <img src="<?php echo htmlspecialchars($logo_src); ?>" alt="<?php echo htmlspecialchars($logo_alt); ?>" class="logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,6 +41,7 @@ session_start();
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Find a Tutor</a></li>
                             <li><a class="dropdown-item" href="#">Become a Tutor</a></li>
+                            <li><a class="dropdown-item" href="request-tutor.php">Request a Tutor</a></li>
                         </ul>
                     </li>
                 </ul>

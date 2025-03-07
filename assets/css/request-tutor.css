@@ -1,0 +1,234 @@
+/* Request Tutor Page Styles */
+:root {
+    --request-tutor-primary: #564FFD;
+    --request-tutor-text-dark: #1B1B3F;
+    --request-tutor-text-light: #6F6F6F;
+    --request-tutor-bg-light: #F8F8F8;
+    --request-tutor-border: #E7E7E7;
+    --request-tutor-white: #FFFFFF;
+}
+
+.request-tutor-page {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--request-tutor-bg-light);
+    color: var(--request-tutor-text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Override profile nav styles for this page */
+.request-tutor-page .profile-main-nav {
+    margin-bottom: 40px;
+}
+
+.request-tutor-page .profile-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.request-tutor-main {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+    flex: 1 0 auto;
+}
+
+/* Footer specific styles */
+.main-footer {
+    flex-shrink: 0; /* Prevents the footer from shrinking */
+    width: 100%;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+.request-tutor-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--request-tutor-text-dark);
+    margin-bottom: 2rem;
+    margin-left: -62rem;
+}
+
+.request-tutor-form {
+    background: transparent;
+    border-radius: 20px;
+    padding: 40px 60px;
+    width: 160%;
+    padding-top: 0px;
+}
+
+/* Form Sections */
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    color: var(--request-tutor-text-dark);
+    margin-bottom: 8px;
+}
+
+.form-control,
+.form-select {
+    height: 52px;
+    padding: 0 20px;
+    width: 100%;
+    border: 1px solid var(--request-tutor-border);
+    border-radius: 8px;
+    font-size: 15px;
+    color: var(--request-tutor-text-dark);
+    background-color: var(--request-tutor-white);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--request-tutor-primary);
+    box-shadow: 0 0 0 2px rgba(86, 79, 253, 0.1);
+    outline: none;
+}
+
+.request-tutor-textarea {
+    height: auto;
+    padding: 20px;
+    min-height: 200px;
+    resize: none;
+}
+
+/* Two Column Layout */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.form-row.three-columns {
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+/* Connected Inputs */
+.connected-inputs {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.connector {
+    color: var(--request-tutor-text-dark);
+    font-weight: 500;
+}
+
+/* File Upload */
+.file-upload {
+    width: 100%;
+}
+
+.file-input-container {
+    position: relative;
+    width: 100%;
+}
+
+.file-name {
+    width: 100%;
+    padding-right: 100px; /* Space for the button */
+}
+
+.attach-btn {
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--request-tutor-primary);
+    color: var(--request-tutor-white);
+    border: none;
+    padding: 8px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    height: 38px;
+    line-height: 22px;
+}
+
+.attach-btn:hover {
+    background: #4540E5;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.preview-btn {
+    border: none;
+    color: var(--request-tutor-white);
+    background: var(--request-tutor-primary);
+    padding: 10px 32px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.preview-btn:hover {
+    background: #4540E5;
+}
+
+.finish-btn {
+    background: #FDA34F;
+    color: var(--request-tutor-white);
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.finish-btn:hover {
+    background: #ec924a;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .request-tutor-page {
+        padding-top: 80px;
+    }
+
+    .request-tutor-main {
+        padding: 0 20px;
+    }
+
+    .request-tutor-form {
+        padding: 30px 20px;
+    }
+
+    .form-row,
+    .form-row.three-columns {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .connected-inputs {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .connector {
+        align-self: flex-start;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .preview-btn,
+    .finish-btn {
+        width: 100%;
+    }
+} 
