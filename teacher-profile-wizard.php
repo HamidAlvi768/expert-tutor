@@ -1,5 +1,17 @@
 <?php
 session_start();
+
+// Determine which step to display
+$currentStep = isset($_GET['step']) ? $_GET['step'] : 'teacher-profile';
+
+// Validate step name for security
+$validSteps = ['teacher-profile', 'subject-teach', 'education-experience', 'professional-experience', 'teaching-details', 'description'];
+if (!in_array($currentStep, $validSteps)) {
+    $currentStep = 'teacher-profile'; // Default to first step if invalid
+}
+
+// Store current step in session
+$_SESSION['current_wizard_step'] = $currentStep;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +32,7 @@ session_start();
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/profile-navigation.css">
+    <link rel="stylesheet" href="assets/css/wizard-common.css">
     <style>
         /* Teacher Profile Wizard Specific Styles */
         body {
@@ -59,6 +72,7 @@ session_start();
             color: #6c757d;
             position: relative;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
         
         .wizard-step-item.active {
@@ -68,7 +82,6 @@ session_start();
         
         .wizard-step-item:hover:not(.active) {
             background-color: #f8f9fa;
-            cursor: pointer;
         }
         
         .wizard-step-item::before {
@@ -92,6 +105,15 @@ session_start();
             margin: 0 auto;
         }
         
+        /* Section Title */
+        .wizard-section-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1B1B3F;
+            margin-bottom: 30px;
+        }
+        
+        /* Form grid for profile fields */
         .wizard-form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -101,6 +123,36 @@ session_start();
         
         .wizard-form-group {
             margin-bottom: 20px;
+        }
+        
+        .subject-form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .subject-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .subject-label {
+            font-size: 16px;
+            font-weight: 500;
+            color: #1B1B3F;
+        }
+        
+        .level-form-container {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .level-form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
         
         .wizard-form-control {
@@ -127,6 +179,131 @@ session_start();
             background-position: right 15px center;
             background-size: 12px;
             padding-right: 40px;
+        }
+        
+        .subject-select, .level-select {
+            background-color: #f8f9fa;
+            color: #6c757d;
+            height: 50px;
+        }
+        
+        /* Add Subject Button */
+        .btn-add-subject {
+            background-color: #564FFD;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 250px;
+            margin-top: 10px;
+        }
+        
+        .btn-add-subject i {
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        
+        .btn-add-subject:hover {
+            background-color: #4a43e2;
+        }
+        
+        /* Remove Subject Button */
+        .btn-remove-subject {
+            background-color: #f8f9fa;
+            color: #dc3545;
+            border: 1px solid #dc3545;
+            border-radius: 8px;
+            padding: 8px 15px;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .btn-remove-subject:hover {
+            background-color: #feecef;
+        }
+        
+        .subject-section {
+            border-top: 1px solid #e9ecef;
+            padding-top: 25px;
+            margin-top: 10px;
+        }
+        
+        /* Button Styles */
+        .wizard-form-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 50px;
+            gap: 15px;
+        }
+        
+        .btn-save {
+            background-color: white;
+            color: #6366F1;
+            border: 1px solid #6366F1;
+            padding: 10px 40px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-save:hover {
+            background-color: rgba(99, 102, 241, 0.05);
+        }
+        
+        .btn-next {
+            background-color: #6366F1;
+            color: white;
+            border: none;
+            padding: 10px 40px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-next:hover {
+            background-color: #5152e2;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .level-form-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .wizard-container {
+                flex-direction: column;
+            }
+            
+            .wizard-sidebar {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .wizard-steps {
+                border-right: none;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                height: auto;
+                padding: 15px 0;
+            }
         }
         
         /* Photo Upload Styles */
@@ -162,44 +339,6 @@ session_start();
             color: black;
             margin-top: 10px;
         }
-        
-        /* Button Styles */
-        .wizard-form-actions {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 30px;
-            gap: 15px;
-        }
-        
-        .btn-save {
-            background-color: white;
-            color: #6c757d;
-            border: 1px solid #ddd;
-            padding: 10px 25px;
-            border-radius: 8px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .btn-save:hover {
-            background-color: #f8f9fa;
-        }
-        
-        .btn-next {
-            background-color: #6366F1;
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 8px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .btn-next:hover {
-            background-color: #5152e2;
-        }
     </style>
 </head>
 <body>
@@ -215,83 +354,27 @@ session_start();
             <!-- Sidebar -->
             <div class="wizard-sidebar">
                 <ul class="wizard-steps">
-                    <li class="wizard-step-item active">Teacher Profile</li>
-                    <li class="wizard-step-item">Subject Teach</li>
-                    <li class="wizard-step-item">Education /Experience</li>
-                    <li class="wizard-step-item">Professional Experience</li>
-                    <li class="wizard-step-item">Teaching Details</li>
-                    <li class="wizard-step-item">Description</li>
+                    <li class="wizard-step-item <?php echo ($currentStep == 'teacher-profile') ? 'active' : ''; ?>" data-step="teacher-profile">Teacher Profile</li>
+                    <li class="wizard-step-item <?php echo ($currentStep == 'subject-teach') ? 'active' : ''; ?>" data-step="subject-teach">Subject Teach</li>
+                    <li class="wizard-step-item <?php echo ($currentStep == 'education-experience') ? 'active' : ''; ?>" data-step="education-experience">Education /Experience</li>
+                    <li class="wizard-step-item <?php echo ($currentStep == 'professional-experience') ? 'active' : ''; ?>" data-step="professional-experience">Professional Experience</li>
+                    <li class="wizard-step-item <?php echo ($currentStep == 'teaching-details') ? 'active' : ''; ?>" data-step="teaching-details">Teaching Details</li>
+                    <li class="wizard-step-item <?php echo ($currentStep == 'description') ? 'active' : ''; ?>" data-step="description">Description</li>
                 </ul>
             </div>
             
             <!-- Main Content -->
             <div class="wizard-content">
-                <form class="wizard-form-container" id="teacher-profile-form">
-                    <!-- Profile Photo Upload -->
-                    <div class="profile-photo-upload">
-                        <div class="profile-photo-placeholder">
-                            <img src="assets/images/profiles/teacher-avatar.jpg" alt="Profile Photo" id="profile-preview">
-                            <input type="file" id="profile-upload" hidden>
-                        </div>
-                        <div class="upload-your-photo">Upload Your Photo</div>
-                    </div>
-                    
-                    <!-- Form Fields -->
-                    <div class="wizard-form-grid">
-                        <!-- Full Name -->
-                        <div class="wizard-form-group">
-                            <input type="text" class="wizard-form-control" id="full-name" name="full_name" placeholder="Full Name" value="Ali">
-                        </div>
-                        
-                        <!-- Nick Name -->
-                        <div class="wizard-form-group">
-                            <input type="text" class="wizard-form-control" id="nick-name" name="nick_name" placeholder="Nick Name" value="Khan">
-                        </div>
-                        
-                        <!-- Gender -->
-                        <div class="wizard-form-group">
-                            <select class="wizard-form-control wizard-select-control" id="gender" name="gender">
-                                <option value="male" selected>Male</option>
-                                <option value="female">Female</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <!-- Country -->
-                        <div class="wizard-form-group">
-                            <select class="wizard-form-control wizard-select-control" id="country" name="country">
-                                <option value="pakistan" selected>Pakistan</option>
-                                <option value="united_states">United States</option>
-                                <option value="united_kingdom">United Kingdom</option>
-                                <option value="canada">Canada</option>
-                                <option value="australia">Australia</option>
-                                <!-- Add more countries as needed -->
-                            </select>
-                        </div>
-                        
-                        <!-- Language -->
-                        <div class="wizard-form-group">
-                            <select class="wizard-form-control wizard-select-control" id="language" name="language">
-                                <option value="english" selected>English</option>
-                                <option value="urdu">Urdu</option>
-                                <option value="spanish">Spanish</option>
-                                <option value="french">French</option>
-                                <option value="german">German</option>
-                                <!-- Add more languages as needed -->
-                            </select>
-                        </div>
-                        
-                        <!-- Address -->
-                        <div class="wizard-form-group">
-                            <input type="text" class="wizard-form-control" id="address" name="address" placeholder="Address" value="Executive Center I8 islamabad">
-                        </div>
-                    </div>
-                    
-                    <!-- Form Actions -->
-                    <div class="wizard-form-actions">
-                        <button type="button" class="btn-save">Save</button>
-                        <button type="button" class="btn-next">Next</button>
-                    </div>
+                <form class="wizard-form-container" id="wizard-form">
+                    <?php 
+                    // Include the current step file
+                    $stepFilePath = "includes/wizard-steps/{$currentStep}.php";
+                    if (file_exists($stepFilePath)) {
+                        include $stepFilePath;
+                    } else {
+                        echo "<p>Step file not found: {$stepFilePath}</p>";
+                    }
+                    ?>
                 </form>
             </div>
         </div>
@@ -302,43 +385,17 @@ session_start();
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <script>
-        // Profile Image Preview
+        // Make sidebar steps clickable
         document.addEventListener('DOMContentLoaded', function() {
-            const profilePlaceholder = document.querySelector('.profile-photo-placeholder');
-            const profileInput = document.getElementById('profile-upload');
-            const profilePreview = document.getElementById('profile-preview');
+            const stepItems = document.querySelectorAll('.wizard-step-item');
             
-            // Open file dialog when clicking on the profile placeholder
-            profilePlaceholder.addEventListener('click', function() {
-                profileInput.click();
-            });
-            
-            // Update preview when image is selected
-            profileInput.addEventListener('change', function() {
-                if (this.files && this.files[0]) {
-                    const reader = new FileReader();
-                    
-                    reader.onload = function(e) {
-                        profilePreview.src = e.target.result;
+            stepItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const step = this.getAttribute('data-step');
+                    if (step) {
+                        window.location.href = 'teacher-profile-wizard.php?step=' + step;
                     }
-                    
-                    reader.readAsDataURL(this.files[0]);
-                }
-            });
-            
-            // Form Navigation
-            document.querySelector('.btn-next').addEventListener('click', function() {
-                // Save form data and proceed to next step
-                // For now, just console log
-                console.log('Form submitted, proceed to next step');
-                // You would typically save the form data to session/localStorage and redirect to the next step
-                // window.location.href = 'subject-teach.php';
-            });
-            
-            document.querySelector('.btn-save').addEventListener('click', function() {
-                // Save form data without proceeding
-                console.log('Form data saved');
-                // You would typically save the form data via AJAX
+                });
             });
         });
     </script>
