@@ -35,8 +35,9 @@ function renderAuthModal($type = 'login') {
                     <div class="col-md-6 d-none d-md-block">
                         <div class="login-image-panel">
                             <img src="assets/images/student-login.jpg" 
-                                 alt="Student with books" 
-                                 class="img-fluid h-100 w-100 object-fit-cover">
+                                 alt="Login illustration" 
+                                 class="img-fluid h-100 w-100 object-fit-cover"
+                                 id="auth-image">
                         </div>
                     </div>
                     <!-- Right Form Panel -->
@@ -57,7 +58,7 @@ function renderAuthModal($type = 'login') {
                             </div>
                             
                             <!-- Auth Form -->
-                            <form class="auth-form <?php echo $type; ?>-form" onsubmit="showEmailVerification(event)">
+                            <form class="auth-form <?php echo $type; ?>-form" onsubmit="handleAuthSubmit(event)">
                                 <?php if (!$isLogin): ?>
                                 <div class="form-group mb-3">
                                     <div class="input-group">
@@ -69,7 +70,8 @@ function renderAuthModal($type = 'login') {
                                 </div>
                                 <?php endif; ?>
 
-                                <div class="form-group mb-3">
+                                <!-- Email Input Group -->
+                                <div class="form-group mb-3" id="email-input-group">
                                     <div class="input-group">
                                         <span class="input-group-text">
                                             <i class="fas fa-envelope"></i>
@@ -78,6 +80,20 @@ function renderAuthModal($type = 'login') {
                                                class="form-control" 
                                                placeholder="Email" 
                                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                                               required>
+                                    </div>
+                                </div>
+
+                                <!-- Mobile Input Group (Initially Hidden) -->
+                                <div class="form-group mb-3" id="mobile-input-group" style="display: none;">
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-phone"></i>
+                                        </span>
+                                        <input type="tel" 
+                                               class="form-control" 
+                                               placeholder="Mobile Number" 
+                                               pattern="[0-9]{10,}" 
                                                required>
                                     </div>
                                 </div>
@@ -129,6 +145,73 @@ function renderAuthModal($type = 'login') {
             </div>
         </div>
     </div>
+
+    <script>
+        function handleAuthSubmit(event) {
+            event.preventDefault();
+            window.location.href = 'verify/verify-email.php';
+        }
+
+        // Add event listeners for user type toggle and auth method tabs
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to initialize modal functionality
+            function initializeModalFunctionality(modalId) {
+                const modal = document.getElementById(modalId);
+                if (!modal) return;
+
+                // User type toggle functionality
+                const userTypeButtons = modal.querySelectorAll('.user-type-toggle .btn');
+                const authImage = modal.querySelector('#auth-image');
+
+                userTypeButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Remove active class from all buttons in this modal
+                        userTypeButtons.forEach(btn => btn.classList.remove('active'));
+                        // Add active class to clicked button
+                        this.classList.add('active');
+                        
+                        // Update image based on user type
+                        const userType = this.getAttribute('data-type');
+                        if (authImage) {
+                            authImage.src = `assets/images/${userType}-login.jpg`;
+                        }
+                    });
+                });
+
+                // Auth method tabs functionality
+                const authMethodButtons = modal.querySelectorAll('.login-method-tabs .btn');
+                const emailInput = modal.querySelector('#email-input-group');
+                const mobileInput = modal.querySelector('#mobile-input-group');
+
+                authMethodButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Remove active class from all buttons in this modal
+                        authMethodButtons.forEach(btn => btn.classList.remove('active'));
+                        // Add active class to clicked button
+                        this.classList.add('active');
+                        
+                        // Show/hide input fields based on selected method
+                        const method = this.getAttribute('data-method');
+                        if (method === 'email') {
+                            emailInput.style.display = 'block';
+                            mobileInput.style.display = 'none';
+                            emailInput.querySelector('input').required = true;
+                            mobileInput.querySelector('input').required = false;
+                        } else {
+                            emailInput.style.display = 'none';
+                            mobileInput.style.display = 'block';
+                            emailInput.querySelector('input').required = false;
+                            mobileInput.querySelector('input').required = true;
+                        }
+                    });
+                });
+            }
+
+            // Initialize functionality for both modals
+            initializeModalFunctionality('loginModal');
+            initializeModalFunctionality('signupModal');
+        });
+    </script>
     <?php
 }
 ?> 

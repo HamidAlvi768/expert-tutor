@@ -56,7 +56,7 @@ session_start();
                 <div class="profile-user-info">
                     <img src="assets/images/profile.jpg" alt="John Smith" class="profile-user-pic">
                     <span class="profile-user-name">John Smith</span>
-                    <i class="fas fa-check-circle profile-verification-badge"></i>
+                    <i class="fas fa-user profile-verification-badge"></i>
                 </div>
             </div>
         </div>
@@ -184,6 +184,39 @@ session_start();
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <!-- Custom JavaScript -->
-    <script src="assets/js/request-tutor.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // File Upload Handling
+            const fileUpload = document.getElementById('fileUpload');
+            const fileName = document.querySelector('.file-name');
+
+            if (fileUpload && fileName) {
+                fileUpload.addEventListener('change', function(e) {
+                    if (this.files.length > 0) {
+                        fileName.value = this.files[0].name;
+                    }
+                });
+            }
+
+            // Form Preview
+            const previewBtn = document.querySelector('.preview-btn');
+            if (previewBtn) {
+                previewBtn.addEventListener('click', function() {
+                    // Collect form data
+                    const formData = new FormData(document.querySelector('.request-tutor-form'));
+                    console.log('Preview Data:', Object.fromEntries(formData));
+                });
+            }
+
+            // Form Submission
+            const requestForm = document.querySelector('.request-tutor-form');
+            if (requestForm) {
+                requestForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    window.location.href = 'my-requests.php';
+                });
+            }
+        });
+    </script>
 </body>
 </html> 

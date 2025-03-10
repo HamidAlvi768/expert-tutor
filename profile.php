@@ -22,44 +22,11 @@ session_start();
     <link rel="stylesheet" href="assets/css/profile.css">
 </head>
 <body class="profile-page">
-    <!-- Top Header -->
-    <header class="profile-top-header">
-        <div class="profile-container">
-            <div class="profile-header-content">
-                <div class="profile-top-nav">
-                    <a href="login.php" class="profile-nav-link">Sign In</a>
-                    <a href="support.php" class="profile-nav-link">Support</a>
-                    <a href="contact.php" class="profile-nav-link">Contact Sales</a>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Include Top Header -->
+    <?php include 'includes/components/top-header.php'; ?>
 
-    <!-- Main Navigation -->
-    <nav class="profile-main-nav">
-        <div class="profile-container">
-            <div class="profile-nav-content">
-                <div class="profile-nav-left">
-                    <a href="index.php" class="profile-logo">
-                        <img src="assets/images/profile-logo.png" alt="Tutor Expert" class="profile-logo-image">
-                    </a>
-                    <div class="profile-nav-links">
-                        <a href="profile.php" class="active">Profile</a>
-                        <a href="messages.php">Messages</a>
-                        <a href="delivery.php">Delivery Work</a>
-                        <a href="finance.php">Manage Finance</a>
-                        <a href="reviews.php">Reviews</a>
-                    </div>
-                </div>
-
-                <div class="profile-user-info">
-                    <img src="assets/images/profile.jpg" alt="John Smith" class="profile-user-pic">
-                    <span class="profile-user-name">John Smith</span>
-                    <i class="fas fa-check-circle profile-verification-badge"></i>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <!-- Include Main Navigation -->
+    <?php include 'includes/components/main-nav.php'; ?>
 
     <!-- Main Content -->
     <main class="profile-main-content">
