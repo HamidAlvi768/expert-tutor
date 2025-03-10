@@ -119,13 +119,13 @@ function renderAuthModal($type = 'login') {
                                 <div class="social-login text-center">
                                     <p class="text-muted mb-3">Sign in With</p>
                                     <div class="social-icons mb-4">
-                                        <button class="btn btn-social" type="button">
+                                        <button class="btn btn-social facebook" type="button">
                                             <i class="fab fa-facebook-f"></i>
                                         </button>
-                                        <button class="btn btn-social" type="button">
+                                        <button class="btn btn-social google" type="button">
                                             <i class="fab fa-google"></i>
                                         </button>
-                                        <button class="btn btn-social" type="button">
+                                        <button class="btn btn-social apple" type="button">
                                             <i class="fab fa-apple"></i>
                                         </button>
                                     </div>
@@ -149,7 +149,18 @@ function renderAuthModal($type = 'login') {
     <script>
         function handleAuthSubmit(event) {
             event.preventDefault();
-            window.location.href = 'verify/verify-email.php';
+            
+            // Check if the teacher option is selected
+            const modalElement = event.target.closest('.modal');
+            const isTeacherSelected = modalElement.querySelector('.user-type-toggle .btn[data-type="teacher"]').classList.contains('active');
+            
+            if (isTeacherSelected) {
+                // Redirect to teacher profile wizard
+                window.location.href = 'teacher-profile-wizard.php';
+            } else {
+                // Regular user, redirect to email verification
+                window.location.href = 'verify/verify-email.php';
+            }
         }
 
         // Add event listeners for user type toggle and auth method tabs
@@ -212,6 +223,65 @@ function renderAuthModal($type = 'login') {
             initializeModalFunctionality('signupModal');
         });
     </script>
+
+    <style>
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .btn-social {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-social:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-social.facebook {
+            background-color: #1877F2;
+            color: white;
+        }
+
+        .btn-social.google {
+            background-color: white;
+            color: #DB4437;
+            border: 1px solid #eee;
+        }
+
+        .btn-social.apple {
+            background-color: white;
+            color: black;
+        }
+
+        .btn-social i {
+            font-size: 1.2rem;
+        }
+
+        /* Hover States */
+        .btn-social.facebook:hover {
+            background-color: #166fe5;
+        }
+
+        .btn-social.google:hover {
+            background-color: #fafafa;
+        }
+
+        .btn-social.apple:hover {
+            background-color: #1a1a1a;
+            color: white;
+        }
+    </style>
     <?php
 }
 ?> 
