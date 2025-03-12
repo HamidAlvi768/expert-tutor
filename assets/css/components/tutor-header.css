@@ -1,0 +1,123 @@
+/* Tutor Expert Header Styles */
+:root {
+    --primary-color: #564FFD;
+    --text-dark: #1B1B3F;
+    --text-light: #6c757d;
+    --transition: all 0.3s ease;
+}
+
+.tutor-expert-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tutor-expert-header .header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.tutor-expert-header .logo-text {
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+    font-size: 26px;
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.tutor-expert-header .main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.tutor-expert-header .main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.tutor-expert-header .main-nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.tutor-expert-header .main-nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Dropdown styling */
+.dropdown-nav a {
+    position: relative;
+    padding-right: 15px;
+}
+
+.dropdown-nav a::before {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Profile Section */
+.tutor-expert-header .profile-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tutor-expert-header .profile-text {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.tutor-expert-header .profile-image {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .tutor-expert-header .header-left {
+        gap: 1.5rem;
+    }
+    
+    .tutor-expert-header .main-nav ul {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tutor-expert-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .tutor-expert-header .header-left {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        align-items: center;
+    }
+    
+    .tutor-expert-header .main-nav {
+        width: 100%;
+    }
+    
+    .tutor-expert-header .main-nav ul {
+        justify-content: center;
+        gap: 20px;
+    }
+} 

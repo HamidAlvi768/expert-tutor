@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (finishButton) {
         finishButton.addEventListener('click', function() {
             saveData();
-            // Redirect to profile page or dashboard
-            window.location.href = 'profile.php';
+            // Redirect to tutor profile page
+            window.location.href = 'tutor-profile.php';
         });
     }
     
