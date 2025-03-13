@@ -115,12 +115,7 @@ if (isset($props['profile']['full_name']) && !isset($props['profile']['first_nam
                     
                     <?php if ($props['show_info_panel'] && !empty($props['info_panel'])): ?>
                         <div class="info-panel">
-                            <?php foreach ($props['info_panel'] as $item): ?>
-                                <div class="info-item">
-                                    <i class="<?php echo $item['icon']; ?>"></i>
-                                    <span><?php echo $item['label']; ?>: <?php echo $item['value']; ?></span>
-                                </div>
-                            <?php endforeach; ?>
+                            <img src="assets/images/profiles/info-panel.jpg" alt="Tutor Information" class="info-panel-image">
                         </div>
                     <?php endif; ?>
                 </div>

@@ -78,6 +78,7 @@
     color: var(--text-light);
     font-size: 0.9rem;
     margin: 0;
+    margin-bottom: 2rem;
 }
 
 /* Jobs Listing */
@@ -136,6 +137,7 @@
     color: var(--text-dark);
     font-weight: 600;
     margin-left: 2px;
+    font-size: 1.1rem;
 }
 
 .job-description {

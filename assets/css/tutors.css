@@ -115,15 +115,16 @@
 
 .tutors-page-hero-description {
     font-size: 1.1rem;
-    color: var(--tutors-page-text-light);
+    color: var(--tutors-page-text-dark);
     margin-bottom: 2rem;
     max-width: 90%;
+    font-weight: 500;
 }
 
 .tutors-page-search-box {
     display: flex;
     gap: 1rem;
-    max-width: 100%;
+    max-width: 65%;
     margin-top: 2rem;
 }
 

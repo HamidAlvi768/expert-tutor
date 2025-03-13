@@ -62,7 +62,7 @@ $_SESSION['current_wizard_step'] = 'subject-teach';
     </div>
     
     <button type="button" class="btn-add-subject">
-        <span>Add Furthur Subject</span>
+        <span>Add Further Subject</span>
         <i class="fas fa-plus"></i>
     </button>
     

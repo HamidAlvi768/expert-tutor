@@ -18,7 +18,7 @@ $_SESSION['current_wizard_step'] = 'description';
     </div>
     
     <!-- Privacy checkbox -->
-    <div class="wizard-form-group full-width" style="margin-top: 30px;">
+    <div class="wizard-form-group full-width" >
         <div class="checkbox-option">
             <input type="checkbox" id="privacy-agreement" name="privacy_agreement" <?php echo (isset($_SESSION['wizard_data']['description']['privacy_agreement']) && $_SESSION['wizard_data']['description']['privacy_agreement']) ? 'checked' : ''; ?>>
             <label for="privacy-agreement">I have not share of any details like(Phone, Skype,whatsapp etc.)</label>

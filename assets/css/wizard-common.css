@@ -17,7 +17,6 @@
 .description-form-container {
     display: flex;
     flex-direction: column;
-    gap: 25px;
 }
 
 /* Entry Layouts */
@@ -110,7 +109,7 @@
 
 /* Textareas */
 textarea.wizard-form-control {
-    min-height: 100px;
+    min-height: 15rem;
     resize: vertical;
 }
 
@@ -135,8 +134,11 @@ textarea.wizard-form-control {
 
 .btn-add-subject i,
 .btn-add-experience i {
-    font-size: 16px;
-    margin-left: 10px;
+    font-size: 10px !important;
+    margin-left: unset !important;
+    border: 2px solid;
+    border-radius: 50%;
+    padding: 3px;
 }
 
 .btn-add-subject:hover,
@@ -269,7 +271,7 @@ textarea.wizard-form-control {
     -webkit-appearance: none;
     width: 18px;
     height: 18px;
-    border: 1px solid var(--wizard-border);
+    border: 1px solid var(--wizard-text-dark);
     border-radius: 4px;
     outline: none;
     cursor: pointer;

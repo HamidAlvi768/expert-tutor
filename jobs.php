@@ -121,6 +121,7 @@ $jobs = [
                     <div class="job-header">
                         <h2 class="job-title"><?php echo $job['title']; ?></h2>
                         <div class="job-amount">
+                            <span style="margin-right: 0.4rem;">Amount: </span>
                             <span class="amount-value"><?php echo $job['amount']; ?></span>
                             <span class="amount-currency">$</span>
                         </div>

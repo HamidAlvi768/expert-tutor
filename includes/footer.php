@@ -5,11 +5,11 @@
                 <img src="assets/images/logo-white.png" alt="Assignment Connect" class="footer-logo mb-4">
                 <p>Connecting educational institutions with expert tutors worldwide.</p>
                 <div class="social-links">
-                    <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="me-3"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon-link linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon-link"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             
@@ -72,4 +72,30 @@
             </div>
         </div>
     </div>
-</footer> 
+</footer>
+
+<script>
+    // Social icon hover functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const socialIcons = document.querySelectorAll('.social-icon-link');
+        
+        // Set default active state to LinkedIn (middle icon)
+        const linkedInIcon = document.querySelector('.social-icon-link.linkedin');
+        
+        socialIcons.forEach(icon => {
+            icon.addEventListener('mouseenter', function() {
+                // Remove active class from all icons
+                socialIcons.forEach(i => i.classList.remove('linkedin'));
+                // Add active class to hovered icon
+                this.classList.add('linkedin');
+            });
+            
+            icon.addEventListener('mouseleave', function() {
+                // Remove active class from all icons
+                socialIcons.forEach(i => i.classList.remove('linkedin'));
+                // Reset default active state
+                linkedInIcon.classList.add('linkedin');
+            });
+        });
+    });
+</script> 

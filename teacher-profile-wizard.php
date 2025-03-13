@@ -114,6 +114,7 @@ $_SESSION['current_wizard_step'] = $currentStep;
         }
         
         /* Form grid for profile fields */
+        
         .wizard-form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -179,6 +180,7 @@ $_SESSION['current_wizard_step'] = $currentStep;
             background-position: right 15px center;
             background-size: 12px;
             padding-right: 40px;
+            color: gray !important;
         }
         
         .subject-select, .level-select {
@@ -206,8 +208,11 @@ $_SESSION['current_wizard_step'] = $currentStep;
         }
         
         .btn-add-subject i {
-            font-size: 16px;
-            margin-left: 10px;
+            font-size: 10px !important;
+            margin-left: unset !important;
+            border: 2px solid;
+            border-radius: 50%;
+            padding: 3px;
         }
         
         .btn-add-subject:hover {

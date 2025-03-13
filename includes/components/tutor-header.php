@@ -34,7 +34,9 @@ $header_props = isset($header_props) ? array_merge($default_header_props, $heade
 <!-- Header Navigation -->
 <header class="tutor-expert-header container">
     <div class="header-left">
-        <a href="<?php echo $header_props['logo_link']; ?>" class="logo-text"><?php echo $header_props['logo_text']; ?></a>
+        <a href="<?php echo $header_props['logo_link']; ?>" class="logo-link">
+            <img src="assets/images/logo-black.png" alt="<?php echo $header_props['logo_text']; ?>" class="logo-image">
+        </a>
         <nav class="main-nav">
             <ul>
                 <?php foreach ($header_props['nav_items'] as $item): ?>

@@ -20,12 +20,16 @@
     gap: 2rem;
 }
 
-.tutor-expert-header .logo-text {
-    font-family: 'Dancing Script', cursive;
-    font-weight: 600;
-    font-size: 26px;
-    color: var(--text-dark);
+.tutor-expert-header .logo-link {
+    display: flex;
+    align-items: center;
     text-decoration: none;
+}
+
+.tutor-expert-header .logo-image {
+    height: 26px;
+    width: auto;
+    object-fit: contain;
 }
 
 .tutor-expert-header .main-nav {
@@ -64,8 +68,8 @@
     font-weight: 900;
     position: absolute;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(14%);
+    font-size: 0.8rem;
 }
 
 /* Profile Section */

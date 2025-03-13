@@ -23,16 +23,19 @@ $_SESSION['current_wizard_step'] = 'teacher-profile';
 <div class="wizard-form-grid">
     <!-- Full Name -->
     <div class="wizard-form-group">
+        <label class="subject-label" for="full-name">Full Name</label>
         <input type="text" class="wizard-form-control" id="full-name" name="full_name" placeholder="Full Name" value="<?php echo isset($_SESSION['wizard_data']['teacher-profile']['full_name']) ? $_SESSION['wizard_data']['teacher-profile']['full_name'] : 'Ali'; ?>">
     </div>
     
     <!-- Nick Name -->
     <div class="wizard-form-group">
+        <label class="subject-label" for="nick-name">Nick Name</label>
         <input type="text" class="wizard-form-control" id="nick-name" name="nick_name" placeholder="Nick Name" value="<?php echo isset($_SESSION['wizard_data']['teacher-profile']['nick_name']) ? $_SESSION['wizard_data']['teacher-profile']['nick_name'] : 'Khan'; ?>">
     </div>
     
     <!-- Gender -->
     <div class="wizard-form-group">
+        <label class="subject-label" for="gender">Gender</label>
         <select class="wizard-form-control wizard-select-control" id="gender" name="gender">
             <option value="male" <?php echo (!isset($_SESSION['wizard_data']['teacher-profile']['gender']) || $_SESSION['wizard_data']['teacher-profile']['gender'] == 'male') ? 'selected' : ''; ?>>Male</option>
             <option value="female" <?php echo (isset($_SESSION['wizard_data']['teacher-profile']['gender']) && $_SESSION['wizard_data']['teacher-profile']['gender'] == 'female') ? 'selected' : ''; ?>>Female</option>
@@ -42,6 +45,7 @@ $_SESSION['current_wizard_step'] = 'teacher-profile';
     
     <!-- Country -->
     <div class="wizard-form-group">
+        <label class="subject-label" for="country">Country</label>
         <select class="wizard-form-control wizard-select-control" id="country" name="country">
             <option value="pakistan" <?php echo (!isset($_SESSION['wizard_data']['teacher-profile']['country']) || $_SESSION['wizard_data']['teacher-profile']['country'] == 'pakistan') ? 'selected' : ''; ?>>Pakistan</option>
             <option value="united_states" <?php echo (isset($_SESSION['wizard_data']['teacher-profile']['country']) && $_SESSION['wizard_data']['teacher-profile']['country'] == 'united_states') ? 'selected' : ''; ?>>United States</option>
@@ -54,6 +58,7 @@ $_SESSION['current_wizard_step'] = 'teacher-profile';
     
     <!-- Language -->
     <div class="wizard-form-group">
+        <label class="subject-label" for="language">Language</label>
         <select class="wizard-form-control wizard-select-control" id="language" name="language">
             <option value="english" <?php echo (!isset($_SESSION['wizard_data']['teacher-profile']['language']) || $_SESSION['wizard_data']['teacher-profile']['language'] == 'english') ? 'selected' : ''; ?>>English</option>
             <option value="urdu" <?php echo (isset($_SESSION['wizard_data']['teacher-profile']['language']) && $_SESSION['wizard_data']['teacher-profile']['language'] == 'urdu') ? 'selected' : ''; ?>>Urdu</option>
@@ -66,6 +71,7 @@ $_SESSION['current_wizard_step'] = 'teacher-profile';
     
     <!-- Address -->
     <div class="wizard-form-group">
+        <label class="subject-label" for="address">Address</label>
         <input type="text" class="wizard-form-control" id="address" name="address" placeholder="Address" value="<?php echo isset($_SESSION['wizard_data']['teacher-profile']['address']) ? $_SESSION['wizard_data']['teacher-profile']['address'] : 'Executive Center I8 islamabad'; ?>">
     </div>
 </div>

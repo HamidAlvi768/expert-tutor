@@ -123,7 +123,7 @@ function renderAuthModal($type = 'login') {
                                             <i class="fab fa-facebook-f"></i>
                                         </button>
                                         <button class="btn btn-social google" type="button">
-                                            <i class="fab fa-google"></i>
+                                            <img src="assets/images/icons/google.svg" alt="Google" width="20" height="20">
                                         </button>
                                         <button class="btn btn-social apple" type="button">
                                             <i class="fab fa-apple"></i>

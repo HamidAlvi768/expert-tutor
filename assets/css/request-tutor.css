@@ -150,7 +150,7 @@
 
 .attach-btn {
     position: absolute;
-    right: 4px;
+    right: 14px;
     top: 50%;
     transform: translateY(-50%);
     background: var(--request-tutor-primary);

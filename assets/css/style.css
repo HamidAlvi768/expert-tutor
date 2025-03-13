@@ -545,10 +545,11 @@ body {
 }
 
 .teacher-section h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 3.5rem;
+    font-weight: 1000;
     margin-bottom: 1.5rem;
-    color: var(--text-dark);
+    color: #39473B;
+    line-height: 1.3;
 }
 
 .teacher-section p {
@@ -574,29 +575,49 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* Updated Social Links Styles */
 .social-links {
     display: flex;
-    gap: 1rem;
+    gap: 8px;
+    margin-top: 20px;
 }
 
-.social-links a {
-    color: var(--white);
-    font-size: 1.2rem;
-    transition: color 0.3s;
-    opacity: 0.8;
+.social-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 35px;
+    background-color: #363B4766;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    text-align: center;
 }
 
-.social-links a:hover {
-    color: var(--primary-color);
-    opacity: 1;
+.social-icon-link:hover {
+    background-color: #4C6FFF;
+    color: white;
 }
 
+.social-icon-link.linkedin {
+    background-color: #564FFD;
+    box-shadow: 0px 6px 10px 0px #CC522B80;
+}
+
+.social-icon-link i {
+    font-size: 16px;
+    line-height: 16px;
+}
+
+/* Existing Footer Styles */
 .main-footer h4 {
     color: var(--white);
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 500;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
+    width: max-content;
 }
 
 .main-footer ul li {

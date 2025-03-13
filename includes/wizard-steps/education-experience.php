@@ -17,7 +17,7 @@ $_SESSION['current_wizard_step'] = 'education-experience';
         <div class="education-entry">
             <!-- Institute Name with City -->
             <div class="wizard-form-group full-width">
-                <label class="subject-label">Institue Name with City</label>
+                <label class="subject-label">Institute Name with City</label>
                 <div class="custom-select-wrapper">
                     <input type="text" class="wizard-form-control" id="institute-name" name="institute_name" placeholder="Enter Name" value="<?php echo isset($_SESSION['wizard_data']['education-experience']['institute_name']) ? $_SESSION['wizard_data']['education-experience']['institute_name'] : ''; ?>">
                     <div class="dropdown-icon"><i class="fas fa-chevron-down"></i></div>
@@ -106,7 +106,7 @@ $_SESSION['current_wizard_step'] = 'education-experience';
                 <div class="education-entry additional-entry" data-index="<?php echo $index + 1; ?>">
                     <!-- Institute Name with City -->
                     <div class="wizard-form-group full-width">
-                        <label class="subject-label">Institue Name with City</label>
+                        <label class="subject-label">Institute Name with City</label>
                         <div class="custom-select-wrapper">
                             <input type="text" class="wizard-form-control" name="additional_institute_name_<?php echo $index + 1; ?>" placeholder="Enter Name" value="<?php echo $education['institute_name']; ?>">
                             <div class="dropdown-icon"><i class="fas fa-chevron-down"></i></div>
@@ -196,7 +196,7 @@ $_SESSION['current_wizard_step'] = 'education-experience';
     
     <!-- Add Further Subject Button -->
     <button type="button" class="btn-add-subject" id="add-education">
-        <span>Add Furthur Subject</span>
+        <span>Add Further Subject</span>
         <i class="fas fa-plus"></i>
     </button>
 </div>
@@ -313,7 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
             newEducationEntry.innerHTML = `
                 <!-- Institute Name with City -->
                 <div class="wizard-form-group full-width">
-                    <label class="subject-label">Institue Name with City</label>
+                    <label class="subject-label">Institute Name with City</label>
                     <div class="custom-select-wrapper">
                         <input type="text" class="wizard-form-control" name="additional_institute_name_${educationCount}" placeholder="Enter Name">
                         <div class="dropdown-icon"><i class="fas fa-chevron-down"></i></div>
