@@ -71,7 +71,7 @@
 .verification-icon {
   width: min(15vh, 100px);
   height: min(15vh, 100px);
-  background-color: rgba(86, 79, 253, 1);
+  background-color: #F4EBFF;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -104,7 +104,7 @@
 
 .verification-icon i {
   font-size: min(7vh, 48px);
-  color: white;
+  color: rgba(86, 79, 253, 1);
 }
 
 .header-text {

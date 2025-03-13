@@ -118,7 +118,7 @@ session_start();
                 <div class="form-section">
                     <label class="form-label">Budget</label>
                     <select class="form-select">
-                        <option value="">Pkr</option>
+                        <option value="" selected>Pkr</option>
                         <!-- Add more options here -->
                     </select>
                 </div>
@@ -128,7 +128,7 @@ session_start();
                     <div class="form-section">
                         <label class="form-label">Gender</label>
                         <select class="form-select">
-                            <option value="">Gender</option>
+                            <option value="" selected>Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                         </select>
@@ -139,7 +139,7 @@ session_start();
                             <input type="text" class="form-control" placeholder="Enter value">
                             <span class="connector">to</span>
                             <select class="form-select">
-                                <option value="">Enter</option>
+                                <option value="" selected>Enter</option>
                                 <!-- Add more options here -->
                             </select>
                         </div>
@@ -147,7 +147,7 @@ session_start();
                     <div class="form-section">
                         <label class="form-label">Get tutors from</label>
                         <select class="form-select">
-                            <option value="">Per Month</option>
+                            <option value="" selected>Per Month</option>
                             <!-- Add more options here -->
                         </select>
                     </div>

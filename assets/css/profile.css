@@ -44,7 +44,7 @@ body::after {
 }
 
 .container {
-    max-width: 1440px;
+    max-width: 1450px;
     margin: 0 auto;
     padding: 0 30px;
     position: relative;
@@ -598,19 +598,24 @@ select.form-control {
     color: #999;
 }
 
-.profile-form-control:focus {
-    outline: none;
-    border: none;
-    background-color: rgba(245, 245, 245, 1);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
 .profile-select-control {
     appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%236F6F6F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 16px center;
     padding-right: 40px;
+    color: #999;
+}
+
+.profile-select-control option:not(:first-child) {
+    color: var(--profile-text-dark);
+}
+
+.profile-form-control:focus {
+    outline: none;
+    border: none;
+    background-color: rgba(245, 245, 245, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 /* Profile Form Actions */

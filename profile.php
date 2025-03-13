@@ -46,7 +46,7 @@ session_start();
                     <!-- Full Name -->
                     <div class="profile-form-group">
                         <label class="profile-label" for="full-name">Full Name</label>
-                        <input type="text" id="full-name" name="full_name" placeholder="Your First Name" class="profile-form-control">
+                        <input type="text" id="full-name" name="full_name" placeholder="Your Full Name" class="profile-form-control">
                     </div>
 
                     <!-- Nick Name -->

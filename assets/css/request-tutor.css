@@ -83,6 +83,18 @@
     transition: all 0.3s ease;
 }
 
+.form-control::placeholder {
+    color: #999;
+}
+
+.form-select {
+    color: #999;
+}
+
+.form-select option:not(:first-child) {
+    color: var(--request-tutor-text-dark);
+}
+
 .form-control:focus,
 .form-select:focus {
     border-color: var(--request-tutor-primary);
@@ -102,7 +114,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .form-row.three-columns {

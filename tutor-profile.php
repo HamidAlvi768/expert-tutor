@@ -14,7 +14,7 @@ $shortBio = isset($wizardData['description']['short_bio']) ? $wizardData['descri
 $subjects = isset($wizardData['subject-teach']) ? $wizardData['subject-teach'] : [];
 
 // Rating - in a real app, this would come from a database
-$rating = 5.0;
+$rating = 4.9;
 ?>
 <!DOCTYPE html>
 <html lang="en">
