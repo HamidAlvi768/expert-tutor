@@ -35,12 +35,12 @@ $logo_alt = isset($custom_logo_alt) ? $custom_logo_alt : 'Assignment Connect';
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#">
+                        <a class="nav-link dropdown-toggle" href="teacher-profile-wizard.php">
                             Tutor
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Find a Tutor</a></li>
-                            <li><a class="dropdown-item" href="#">Become a Tutor</a></li>
+                            <li><a class="dropdown-item" href="teacher-profile-wizard.php">Become a Tutor</a></li>
                             <li><a class="dropdown-item" href="request-tutor.php">Request a Tutor</a></li>
                         </ul>
                     </li>

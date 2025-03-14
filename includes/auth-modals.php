@@ -58,7 +58,7 @@ function renderAuthModal($type = 'login') {
                             </div>
                             
                             <!-- Auth Form -->
-                            <form class="auth-form <?php echo $type; ?>-form" onsubmit="handleAuthSubmit(event)">
+                            <form class="auth-form <?php echo $type; ?>-form" action="verify/verify-email.php" onsubmit="handleAuthSubmit(event)">
                                 <?php if (!$isLogin): ?>
                                 <div class="form-group mb-3">
                                     <div class="input-group">
@@ -113,7 +113,8 @@ function renderAuthModal($type = 'login') {
                                 </div>
                                 <?php endif; ?>
                                 
-                                <button type="submit" class="btn btn-primary w-100 mb-4"><?php echo $submitText; ?></button>
+                                <!-- <button type="submit" class="btn btn-primary w-100 mb-4"><?php echo $submitText; ?></button> -->
+                                <a href="verify/verify-email.php" class="btn btn-primary w-100 mb-4"><?php echo $submitText; ?></a>
                                 
                                 <!-- Social Login -->
                                 <div class="social-login text-center">
@@ -158,7 +159,7 @@ function renderAuthModal($type = 'login') {
                 // Redirect to teacher profile wizard
                 window.location.href = 'teacher-profile-wizard.php';
             } else {
-                // Regular user, redirect to email verification
+                // Student login - redirect to email verification
                 window.location.href = 'verify/verify-email.php';
             }
         }
