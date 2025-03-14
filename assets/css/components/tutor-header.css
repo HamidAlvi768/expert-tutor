@@ -72,6 +72,10 @@
     font-size: 0.8rem;
 }
 
+.dropdown-item::before{
+    display: none;
+}
+
 /* Profile Section */
 .tutor-expert-header .profile-section {
     display: flex;
@@ -124,4 +128,39 @@
         justify-content: center;
         gap: 20px;
     }
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    padding: 8px 0;
+    display: none;
+    z-index: 1000;
+}
+
+.dropdown-nav {
+    position: relative;
+}
+
+.dropdown-nav:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 8px 16px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--bg-gray);
+    color: var(--primary-color);
 } 

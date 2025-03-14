@@ -20,7 +20,8 @@ $default_header_props = [
     'nav_items' => [
         ['text' => 'Home', 'url' => 'index.php', 'has_dropdown' => false],
         ['text' => 'Subjects', 'url' => '#', 'has_dropdown' => true],
-        ['text' => 'Tutor', 'url' => '#', 'has_dropdown' => true]
+        ['text' => 'Tutor', 'url' => '#', 'has_dropdown' => true],
+        ['text' => 'Manage Finance', 'url' => '#', 'has_dropdown' => true]
     ],
     'show_profile' => false,
     'profile_name' => 'Profile',
@@ -42,6 +43,15 @@ $header_props = isset($header_props) ? array_merge($default_header_props, $heade
                 <?php foreach ($header_props['nav_items'] as $item): ?>
                     <li class="<?php echo $item['has_dropdown'] ? 'dropdown-nav' : ''; ?>">
                         <a href="<?php echo $item['url']; ?>"><?php echo $item['text']; ?></a>
+                        <?php if ($item['text'] === 'Manage Finance'): ?>
+                            <div class="dropdown-menu">
+                                <a href="coin-wallet.php" class="dropdown-item">Coin Wallet</a>
+                                <a href="buy-coin.php" class="dropdown-item">Buy Coin</a>
+                                <a href="add-card.php" class="dropdown-item">Add Card</a>
+                                <a href="invite-friend.php" class="dropdown-item">Invite Friend</a>
+                                <a href="referral.php" class="dropdown-item">Referal</a>
+                            </div>
+                        <?php endif; ?>
                     </li>
                 <?php endforeach; ?>
             </ul>

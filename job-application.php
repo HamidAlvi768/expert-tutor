@@ -32,7 +32,7 @@ $header_props = [
         ['text' => 'Profile', 'url' => 'profile.php', 'has_dropdown' => false],
         ['text' => 'Messages', 'url' => 'messages.php', 'has_dropdown' => false],
         ['text' => 'Delivery Work', 'url' => 'delivery.php', 'has_dropdown' => false],
-        ['text' => 'Manage Finance', 'url' => 'finance.php', 'has_dropdown' => false],
+        ['text' => 'Manage Finance', 'url' => 'finance.php', 'has_dropdown' => true],
         ['text' => 'Notification', 'url' => 'notifications.php', 'has_dropdown' => false],
     ],
     'show_profile' => true,
@@ -93,7 +93,7 @@ $job = $jobs[$job_id];
 <body class="job-application-page">
     <style>
         .main-container{
-            margin-top: 3rem;
+            /* margin-top: 3rem; */
         }
         .tutor-name{
             font-size: 6.5rem !important;
@@ -114,51 +114,65 @@ $job = $jobs[$job_id];
     <!-- Include the tutor-hero component (which includes the header) -->
     <?php include 'includes/components/tutor-hero.php'; ?>
     
+    <!-- Jobs Navigation -->
+    <section class="jobs-navigation">
+        <div class="container">
+            <nav class="jobs-tabs">
+                <a href="#" class="tab-link active">Best Matches</a>
+                <a href="#" class="tab-link">Recent</a>
+                <a href="#" class="tab-link">Job Saved</a>
+            </nav>
+            <p class="jobs-description">Explore job opportunities that align with your experience and the client's hiring criteria, sorted by relevance.</p>
+        </div>
+    </section>
+
     <!-- Job Application Section -->
     <section class="job-detail-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="job-detail">
-                        <h1 class="job-detail-title"><?php echo $job['title']; ?></h1>
-                        <div class="job-detail-description">
-                            <?php 
-                            // Format the job description to preserve line breaks and structure
-                            $formatted_description = str_replace(
-                                ['Key Responsibilities:', 'Ideal Candidate:'],
-                                ['<strong>Key Responsibilities:</strong>', '<strong>Ideal Candidate:</strong>'],
-                                $job['description']
-                            );
-                            $formatted_description = nl2br($formatted_description);
-                            
-                            // Convert dash lists to proper HTML lists
-                            $formatted_description = preg_replace(
-                                '/- (.+?)(?=<br|$)/m',
-                                '• $1',
-                                $formatted_description
-                            );
-                            
-                            echo $formatted_description;
-                            ?>
+            <div class="job-detail-container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="job-detail">
+                            <h1 class="job-detail-title"><?php echo $job['title']; ?></h1>
+                            <div class="job-detail-description">
+                                <?php 
+                                // Format the job description to preserve line breaks and structure
+                                $formatted_description = str_replace(
+                                    ['Key Responsibilities:', 'Ideal Candidate:'],
+                                    ['<strong>Key Responsibilities:</strong>', '<strong>Ideal Candidate:</strong>'],
+                                    $job['description']
+                                );
+                                $formatted_description = nl2br($formatted_description);
+                                
+                                // Convert dash lists to proper HTML lists
+                                $formatted_description = preg_replace(
+                                    '/- (.+?)(?=<br|$)/m',
+                                    '• $1',
+                                    $formatted_description
+                                );
+                                
+                                echo $formatted_description;
+                                ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="job-actions">
-                        <button class="btn-message">
-                            <span class="action-text">Message</span>
-                            <div class="coin-need">
-                                <span>Coin Need <?php echo $job['coin_need']; ?></span>
-                                <span class="coin-icon"><i class="fas fa-coins"></i></span>
-                            </div>
-                        </button>
-                        <button class="btn-call">
-                            <span class="action-text">Call</span>
-                            <div class="coin-need">
-                                <span>Coin Need <?php echo $job['coin_need']; ?></span>
-                                <span class="coin-icon"><i class="fas fa-coins"></i></span>
-                            </div>
-                        </button>
+                    <div class="col-lg-5">
+                        <div class="job-actions">
+                            <button class="btn-message">
+                                Message
+                                <div class="coin-info">
+                                    Coin Need <?php echo $job['coin_need']; ?>
+                                    <img src="assets/images/icons/coin.png" alt="Coin" class="coin-icon">
+                                </div>
+                            </button>
+                            <button class="btn-call">
+                                Call
+                                <div class="coin-info">
+                                    Coin Need <?php echo $job['coin_need']; ?>
+                                    <img src="assets/images/icons/coin.png" alt="Coin" class="coin-icon">
+                                </div>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
