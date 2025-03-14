@@ -58,7 +58,7 @@ function renderAuthModal($type = 'login') {
                             </div>
                             
                             <!-- Auth Form -->
-                            <form class="auth-form <?php echo $type; ?>-form" onsubmit="handleAuthSubmit(event)">
+                            <form class="auth-form <?php echo $type; ?>-form" action="" onsubmit="handleAuthSubmit(event)">
                                 <?php if (!$isLogin): ?>
                                 <div class="form-group mb-3">
                                     <div class="input-group">
