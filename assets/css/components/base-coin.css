@@ -63,7 +63,6 @@
     right: 0;
     bottom: 80px; /* Height of footer */
     width: 100%;
-    background-image: url('../../images/hero-image.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

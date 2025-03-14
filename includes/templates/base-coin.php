@@ -54,11 +54,28 @@ if (!isset($header_props)) {
             <link rel="stylesheet" href="<?php echo $css; ?>">
         <?php endforeach; ?>
     <?php endif; ?>
+    <style>
+    .coin-hero {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        right: 0;
+        bottom: 80px;
+        width: 100%;
+        background-image: <?php echo ($page_class === 'add-card-page' || $page_class === 'payment-method-page') ? 'url("assets/images/card-bg.jpg")' : 'url("assets/images/hero-image.jpg")'; ?>;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 1;
+    }
+    </style>
 </head>
 <body class="coin-page <?php echo isset($page_class) ? $page_class : ''; ?>">
     <!-- Background Hero Section -->
     <div class="coin-hero">
-        <div class="overlay"></div>
+        <?php if (!($page_class === 'add-card-page' || $page_class === 'payment-method-page')): ?>
+            <div class="overlay"></div>
+        <?php endif; ?>
     </div>
 
     <!-- Main Content Wrapper -->
