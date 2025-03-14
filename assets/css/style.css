@@ -57,8 +57,6 @@ body {
     padding: 0.5rem 0;
 }
 
-
-
 @media only screen and (min-width:991px) {
     #navbarMain {
         display: flex;
