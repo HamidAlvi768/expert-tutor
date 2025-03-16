@@ -22,8 +22,14 @@ session_start();
     <link rel="stylesheet" href="assets/css/profile.css">
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #ffffff;
             font-family: 'Poppins', sans-serif;
+        }
+
+        /* Add class to hide background pseudo-elements */
+        body.no-bg::before,
+        body.no-bg::after {
+            opacity: 0 !important;
         }
         
         .expertTutor_myRequests_container {
@@ -241,7 +247,7 @@ session_start();
         }
     </style>
 </head>
-<body>
+<body class="no-bg">
     <!-- Include Top Header -->
     <?php include 'includes/components/top-header.php'; ?>
 
@@ -372,6 +378,21 @@ session_start();
                     if (this.value.length === 1) {
                         if (index < codeInputs.length - 1) {
                             codeInputs[index + 1].focus();
+                        } else {
+                            // All inputs are filled, check if code is complete
+                            let isComplete = true;
+                            let verificationCode = '';
+                            codeInputs.forEach(input => {
+                                if (!input.value) {
+                                    isComplete = false;
+                                }
+                                verificationCode += input.value;
+                            });
+                            
+                            if (isComplete) {
+                                // Redirect to tutor dashboard
+                                window.location.href = 'tutor-dashboard.php';
+                            }
                         }
                     }
                 });

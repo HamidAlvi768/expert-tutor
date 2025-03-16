@@ -49,7 +49,7 @@ session_start();
                         <a href="messages.php">Messages</a>
                         <a href="delivery.php">Delivery Work</a>
                         <a href="finance.php">Manage Finance</a>
-                        <a href="reviews.php">Reviews</a>
+                        <a href="teacher-reviews.php">Reviews</a>
                     </div>
                 </div>
 
