@@ -22,7 +22,7 @@ $logo_alt = isset($custom_logo_alt) ? $custom_logo_alt : 'Assignment Connect';
             <!-- Collapsible Navbar Content -->
             <div class="collapse navbar-collapse" id="navbarMain">
                 <!-- Main Navigation Links -->
-                <ul class="navbar-nav" style="margin:0px;">
+                <ul class="navbar-nav" style="margin-left:4rem;">
                     <li class="nav-item">
                         <a class="nav-link active" href="index.php">Home</a>
                     </li>
