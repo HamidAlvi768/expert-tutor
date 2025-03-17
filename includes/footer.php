@@ -58,7 +58,7 @@
         
         <div class="row mt-5">
             <div class="col-12">
-                <div class="footer-bottom d-flex justify-content-between align-items-center">
+                <div class="footer-bottom d-flex justify-content-between">
                     <p class="mb-0">&copy; <?php echo date('Y'); ?> Assignment Connect. All rights reserved.</p>
                     <div class="language-selector">
                         <select class="form-select bg-dark text-light border-0">

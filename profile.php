@@ -116,5 +116,6 @@ session_start();
     
     <!-- Custom JavaScript -->
     <script src="assets/js/profile.js"></script>
+    <script src="assets/js/profile-nav.js"></script>
 </body>
 </html> 

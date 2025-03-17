@@ -38,7 +38,7 @@ $logo_alt = isset($custom_logo_alt) ? $custom_logo_alt : 'Assignment Connect';
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="teacher-profile-wizard.php">
+                        <a class="nav-link dropdown-toggle" href="#" id="tutorDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Tutor
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="tutorDropdown">

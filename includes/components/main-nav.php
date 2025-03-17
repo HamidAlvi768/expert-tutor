@@ -15,20 +15,47 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
                 <a href="index.php" class="profile-logo">
                     <img src="assets/images/profile-logo.png" alt="Tutor Expert" class="profile-logo-image">
                 </a>
-                <div class="profile-nav-links">
-                    <a href="profile.php" class="<?php echo $current_page === 'profile' ? 'active' : ''; ?>">Profile</a>
-                    <a href="messages.php" class="<?php echo $current_page === 'messages' ? 'active' : ''; ?>">Messages</a>
-                    <a href="delivery.php" class="<?php echo $current_page === 'delivery' ? 'active' : ''; ?>">Delivery Work</a>
-                    <a href="finance.php" class="<?php echo $current_page === 'finance' ? 'active' : ''; ?>">Manage Finance</a>
-                    <a href="teacher-reviews.php" class="<?php echo $current_page === 'reviews' ? 'active' : ''; ?>">Reviews</a>
+                
+                <!-- Hamburger Menu Button -->
+                <button class="profile-mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+
+                <!-- Navigation Links - Now wrapped in a container for mobile -->
+                <div class="profile-nav-links-container">
+                    <!-- Close button for mobile -->
+                    <button class="profile-nav-close" aria-label="Close menu">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    
+                    <div class="profile-nav-links">
+                        <a href="profile.php" class="<?php echo $current_page === 'profile' ? 'active' : ''; ?>">Profile</a>
+                        <a href="messages.php" class="<?php echo $current_page === 'messages' ? 'active' : ''; ?>">Messages</a>
+                        <a href="delivery.php" class="<?php echo $current_page === 'delivery' ? 'active' : ''; ?>">Delivery Work</a>
+                        <a href="finance.php" class="<?php echo $current_page === 'finance' ? 'active' : ''; ?>">Manage Finance</a>
+                        <a href="teacher-reviews.php" class="<?php echo $current_page === 'reviews' ? 'active' : ''; ?>">Reviews</a>
+                    </div>
+
+                    <!-- Mobile-only user info -->
+                    <div class="profile-user-info mobile-only">
+                        <img src="assets/images/profile.jpg" alt="John Smith" class="profile-user-pic">
+                        <span class="profile-user-name">John Smith</span>
+                        <i class="fas fa-user profile-verification-badge"></i>
+                    </div>
                 </div>
             </div>
 
-            <div class="profile-user-info">
+            <!-- Desktop user info -->
+            <div class="profile-user-info desktop-only">
                 <img src="assets/images/profile.jpg" alt="John Smith" class="profile-user-pic">
                 <span class="profile-user-name">John Smith</span>
                 <i class="fas fa-user profile-verification-badge"></i>
             </div>
         </div>
     </div>
-</nav> 
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div class="profile-mobile-overlay"></div> 
