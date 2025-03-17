@@ -26,7 +26,7 @@ if (session_status() === PHP_SESSION_NONE) {
     
     <style>
         body {
-            background-color: #ffffff;
+            background-color: #F4F5F7;
             font-family: 'Poppins', sans-serif;
         }
 
@@ -48,6 +48,12 @@ if (session_status() === PHP_SESSION_NONE) {
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             padding: 25px;
             margin-bottom: 20px;
+            cursor: pointer;
+            transition: box-shadow 0.2s ease-in-out;
+        }
+
+        .expertTutor_dashboard_card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .expertTutor_dashboard_header {
@@ -133,7 +139,7 @@ if (session_status() === PHP_SESSION_NONE) {
         }
 
         .expertTutor_dashboard_createPost {
-            background-color: #00AB55;
+            background-color: #09B31A;
             color: white;
             border: none;
             padding: 12px 24px;
@@ -148,6 +154,7 @@ if (session_status() === PHP_SESSION_NONE) {
             cursor: pointer;
             transition: all 0.2s ease-in-out;
             box-shadow: 0 2px 4px rgba(0, 171, 85, 0.08);
+            flex-direction: row-reverse;
         }
 
         .expertTutor_dashboard_createPost:hover {
@@ -198,7 +205,7 @@ if (session_status() === PHP_SESSION_NONE) {
         </div>
 
         <!-- Post Cards -->
-        <div class="expertTutor_dashboard_card">
+        <div class="expertTutor_dashboard_card" onclick="window.location.href='job-detail.php?id=1'">
             <div class="expertTutor_dashboard_header">
                 <h1 class="expertTutor_dashboard_title fs-2 fw-semibold text-dark">JAVA assignment help teacher needed in G-10</h1>
                 <div class="expertTutor_dashboard_messageIcon">
@@ -249,7 +256,7 @@ if (session_status() === PHP_SESSION_NONE) {
         </div>
 
         <!-- Duplicate Post Card -->
-        <div class="expertTutor_dashboard_card">
+        <div class="expertTutor_dashboard_card" onclick="window.location.href='job-detail.php?id=2'">
             <div class="expertTutor_dashboard_header">
                 <h1 class="expertTutor_dashboard_title fs-2 fw-semibold text-dark">JAVA assignment help teacher needed in G-10</h1>
                 <div class="expertTutor_dashboard_messageIcon">

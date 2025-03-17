@@ -20,6 +20,7 @@ html, body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline: 1px solid red;
 }
 
 body {
@@ -134,7 +135,7 @@ body {
     font-size: 4rem;
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     white-space: nowrap;
     align-items: baseline;
 }
@@ -149,6 +150,7 @@ body {
 
 .hero-title .title-line-2 {
     font-size: 4rem;
+    flex-wrap: wrap;
 }
 
 .hero-title span {
@@ -204,6 +206,17 @@ body {
     height: auto;
     line-height: 1.5;
 }
+
+@media (max-width: 1024px) {
+    /* Your styles for screens smaller than desktop */
+    .search-box .form-control {
+        width: 100%;
+    }
+  }
+
+  .stat-content{
+    flex: unset;
+  }
 
 .search-box .form-control::placeholder {
     color: #666;
@@ -716,7 +729,6 @@ body {
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
-    gap: 48rem;
 }
 
 /* Responsive Styles */
