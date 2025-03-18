@@ -30,6 +30,7 @@ $_SESSION['current_wizard_step'] = $currentStep;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/utils/utilities.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/profile-navigation.css">
     <link rel="stylesheet" href="assets/css/wizard-common.css">
@@ -388,6 +389,9 @@ $_SESSION['current_wizard_step'] = $currentStep;
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Navigation JS -->
+    <script src="assets/js/profile-nav.js"></script>
     
     <script>
         // Make sidebar steps clickable

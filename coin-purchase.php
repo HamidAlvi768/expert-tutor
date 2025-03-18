@@ -33,7 +33,7 @@
                             <h3>Starter Pack</h3>
                         </div>
                         <div class="package-price">
-                            <span class="amount">$25</span>
+                            <span class="amount">PKR 25</span>
                             <span class="coins">500 Coins</span>
                         </div>
                         <ul class="package-benefits">
@@ -52,7 +52,7 @@
                             <span class="featured-tag">Most Popular</span>
                         </div>
                         <div class="package-price">
-                            <span class="amount">$50</span>
+                            <span class="amount">PKR 50</span>
                             <span class="coins">1200 Coins</span>
                         </div>
                         <ul class="package-benefits">

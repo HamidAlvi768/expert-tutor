@@ -184,6 +184,7 @@
 
     .jobs-tabs {
         gap: 20px;
+        flex-wrap: wrap;
     }
 
     .job-content {

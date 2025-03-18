@@ -11,12 +11,7 @@ $initialView = true; // You can set this based on session/state management
     <div class="payment-methods">
         <p class="payment-text">Payment Method Available</p>
         <div class="payment-logos">
-            <img src="assets/images/icons/amex.png" alt="American Express">
-            <img src="assets/images/icons/discover.png" alt="Discover">
-            <img src="assets/images/icons/paypal.png" alt="PayPal">
-            <img src="assets/images/icons/mastercard.png" alt="Mastercard">
-            <img src="assets/images/icons/maestro.png" alt="Maestro">
-            <img src="assets/images/icons/stripe.png" alt="Stripe">
+            <img src="assets/images/icons/easypaisa.png" alt="Easypaisa">
         </div>
     </div>
 </div>
@@ -227,6 +222,10 @@ $initialView = true; // You can set this based on session/state management
     .hero-title .main-title {
         font-size: 2.5rem;
         white-space: normal;
+        display: flex;
+        flex-wrap: wrap;
+        width: max-content;
+        align-items: baseline;
     }
     
     .hero-title .subtitle {

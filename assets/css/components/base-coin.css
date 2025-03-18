@@ -17,6 +17,11 @@
 
 .coin-page .tutor-expert-header{
     padding: 10px 0;
+    margin: 0px;
+}
+ 
+.coin-page .tutor-nav-content {
+    padding: 0.5rem 1rem;
 }
 
 /* Top Header */
@@ -90,7 +95,7 @@
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 0;
     color: var(--text-dark);
     max-width: 800px;
     margin: 0 auto;

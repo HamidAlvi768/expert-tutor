@@ -115,6 +115,13 @@ session_start();
             text-decoration: none;
         }
 
+        @media (max-width: 991.98px) {
+            .expertTutor_myRequests_verifyButton,
+            .expertTutor_myRequests_finishButton {
+                margin: 1rem auto;
+            }
+        }
+
         .expertTutor_myRequests_verifyButton {
             background: white;
             color: black !important;
@@ -258,7 +265,7 @@ session_start();
     <div class="container mt-4 mb-5">
         <!-- Phone Verification Banner -->
         <div class="expertTutor_myRequests_notification p-2">
-            <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center justify-content-between" style="flex-wrap: wrap;">
                 <div class="d-flex align-items-center" style="margin-left: 1rem;">
                     <svg class="alert-icon me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
@@ -279,22 +286,10 @@ session_start();
                 mattis nunc sem quisque amet. Vel.
             </p>
             
-            <div class="d-flex align-items-center justify-content-between mt-4">
+            <div class="d-flex align-items-center justify-content-between mt-4" style="flex-wrap: wrap;">
                 <div class="d-flex align-items-center">
                     <span class="expertTutor_myRequests_price">
-                        <span class="expertTutor_myRequests_currency">
-                            <svg width="16" height="16" viewBox="0 0 39 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_1992_4317)">
-                                    <path d="M19.5898 2.36942V37.5713" stroke-width="3.20017" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M27.5902 8.76971H15.5896C14.1043 8.76971 12.6798 9.35974 11.6295 10.41C10.5793 11.4603 9.98926 12.8847 9.98926 14.37C9.98926 15.8553 10.5793 17.2798 11.6295 18.33C12.6798 19.3803 14.1043 19.9703 15.5896 19.9703H23.59C25.0753 19.9703 26.4997 20.5603 27.55 21.6106C28.6003 22.6609 29.1903 24.0853 29.1903 25.5706C29.1903 27.0559 28.6003 28.4804 27.55 29.5306C26.4997 30.5809 25.0753 31.1709 23.59 31.1709H9.98926" stroke-width="3.20017" stroke-linecap="round" stroke-linejoin="round"/>
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_1992_4317">
-                                        <rect width="38.402" height="38.402" fill="white" transform="translate(0.389648 0.769287)"/>
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </span>
+                        <span class="expertTutor_myRequests_currency">PKR</span>
                         345.45
                     </span>
                     <span class="expertTutor_myRequests_location">
@@ -349,6 +344,9 @@ session_start();
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Navigation JS -->
+    <script src="assets/js/profile-nav.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

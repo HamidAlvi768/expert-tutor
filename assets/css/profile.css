@@ -429,6 +429,7 @@ select.form-control {
     display: flex;
     align-items: center;
     gap: 48px;
+    width: 100%;
 }
 
 .profile-logo {
@@ -498,6 +499,7 @@ select.form-control {
     font-weight: 500;
     font-size: 15px;
     color: var(--profile-text-dark);
+    width: max-content;
 }
 
 .profile-verification-badge {
@@ -513,7 +515,7 @@ select.form-control {
 }
 
 .profile-container {
-    padding-inline: 3rem;
+    padding-inline: 1rem;
 }
 
 .profile-form-container {
@@ -703,9 +705,9 @@ select.form-control {
 @media (max-width: 575.98px) {
     .profile-form-actions {
         justify-content: center;
-    }
+}
 
-    .profile-btn-save {
+.profile-btn-save {
         width: 100%;
         padding: 12px 24px;
     }
@@ -798,7 +800,7 @@ body.mobile-menu-active .hamburger-line:nth-child(3) {
     }
 
     .profile-nav-content {
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .profile-nav-close {
@@ -810,7 +812,7 @@ body.mobile-menu-active .hamburger-line:nth-child(3) {
         top: 0;
         right: -300px;
         width: 300px;
-        height: 100vh;
+        min-height: 70vh;
         background: white;
         padding: 80px 20px 20px;
         z-index: 1020;
@@ -837,7 +839,7 @@ body.mobile-menu-active .hamburger-line:nth-child(3) {
 
     body.mobile-menu-active .profile-nav-links-container {
         display: flex;
-        right: 0;
+        right: 5vw;
         opacity: 1;
         transform: translateX(0);
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);

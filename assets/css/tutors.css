@@ -99,7 +99,7 @@
 
 .tutors-page-from {
     font-weight: 700;
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--tutors-page-text-dark);
 }
 
@@ -343,6 +343,11 @@
 @media (max-width: 576px) {
     .tutors-page-hero-title {
         font-size: 2.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.4rem;
+
     }
     
     .tutors-page-highlight {

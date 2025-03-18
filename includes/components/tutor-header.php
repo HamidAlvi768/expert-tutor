@@ -34,37 +34,70 @@ $header_props = isset($header_props) ? array_merge($default_header_props, $heade
 
 <!-- Header Navigation -->
 <header class="tutor-expert-header container">
-    <div class="header-left">
-        <a href="<?php echo $header_props['logo_link']; ?>" class="logo-link">
-            <img src="assets/images/logo-black.png" alt="<?php echo $header_props['logo_text']; ?>" class="logo-image">
-        </a>
-        <nav class="main-nav">
-            <ul>
-                <?php foreach ($header_props['nav_items'] as $item): ?>
-                    <li class="<?php echo $item['has_dropdown'] ? 'dropdown-nav' : ''; ?>">
-                        <a href="<?php echo $item['url']; ?>"><?php echo $item['text']; ?></a>
-                        <?php if ($item['text'] === 'Manage Finance'): ?>
-                            <div class="dropdown-menu">
-                                <a href="coin-wallet.php" class="dropdown-item">Coin Wallet</a>
-                                <a href="buy-coin.php" class="dropdown-item">Buy Coin</a>
-                                <a href="add-card.php" class="dropdown-item">Add Card</a>
-                                <a href="invite-friend.php" class="dropdown-item">Invite Friend</a>
-                                <a href="referral.php" class="dropdown-item">Referal</a>
-                            </div>
-                        <?php endif; ?>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        </nav>
+    <div class="tutor-nav-content">
+        <div class="tutor-nav-left">
+            <a href="<?php echo $header_props['logo_link']; ?>" class="tutor-logo">
+                <img src="assets/images/logo-black.png" alt="<?php echo $header_props['logo_text']; ?>" class="tutor-logo-image">
+            </a>
+            
+            <!-- Hamburger Menu Button -->
+            <button class="tutor-mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+
+            <!-- Navigation Links Container -->
+            <div class="tutor-nav-links-container">
+                <!-- Close button for mobile -->
+                <button class="tutor-nav-close" aria-label="Close menu">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <nav class="tutor-nav-links">
+                    <ul>
+                        <?php foreach ($header_props['nav_items'] as $item): ?>
+                            <li class="<?php echo $item['has_dropdown'] ? 'dropdown-nav' : ''; ?>">
+                                <a href="<?php echo $item['url']; ?>"><?php echo $item['text']; ?></a>
+                                <?php if ($item['text'] === 'Manage Finance'): ?>
+                                    <div class="dropdown-menu">
+                                        <a href="coin-wallet.php" class="dropdown-item">Coin Wallet</a>
+                                        <a href="buy-coin.php" class="dropdown-item">Buy Coin</a>
+                                        <a href="add-card.php" class="dropdown-item">Add Card</a>
+                                        <a href="invite-friend.php" class="dropdown-item">Invite Friend</a>
+                                        <a href="referral.php" class="dropdown-item">Referal</a>
+                                    </div>
+                                <?php endif; ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </nav>
+
+                <?php if ($header_props['show_profile']): ?>
+                <!-- Mobile-only profile section -->
+                <div class="tutor-user-info mobile-only">
+                    <img src="<?php echo $header_props['profile_image']; ?>" alt="Profile" class="tutor-user-pic">
+                    <span class="tutor-user-name"><?php echo $header_props['profile_name']; ?></span>
+                </div>
+                <?php endif; ?>
+            </div>
+        </div>
+        
+        <?php if ($header_props['show_profile']): ?>
+        <!-- Desktop profile section -->
+        <div class="tutor-user-info desktop-only">
+            <img src="<?php echo $header_props['profile_image']; ?>" alt="Profile" class="tutor-user-pic">
+            <span class="tutor-user-name"><?php echo $header_props['profile_name']; ?></span>
+        </div>
+        <?php endif; ?>
     </div>
-    
-    <?php if ($header_props['show_profile']): ?>
-    <div class="profile-section">
-        <span class="profile-text"><?php echo $header_props['profile_name']; ?></span>
-        <img src="<?php echo $header_props['profile_image']; ?>" alt="Profile" class="profile-image">
-    </div>
-    <?php endif; ?>
 </header>
 
+<!-- Mobile Menu Overlay -->
+<div class="tutor-mobile-overlay"></div>
+
 <!-- Include external CSS -->
-<link rel="stylesheet" href="assets/css/components/tutor-header.css"> 
+<link rel="stylesheet" href="assets/css/components/tutor-header.css">
+
+<!-- Include Navigation JS -->
+<script src="assets/js/tutor-nav.js"></script> 

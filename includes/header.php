@@ -58,3 +58,14 @@ $logo_alt = isset($custom_logo_alt) ? $custom_logo_alt : 'Assignment Connect';
         </div>
     </nav>
 </header>
+<style>
+    @media (max-width: 991px) {
+        #navbarMain {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    }
+</style>

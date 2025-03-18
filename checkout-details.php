@@ -104,11 +104,11 @@ $additional_css = ['assets/css/components/checkout-details.css'];
                         <div class="order-summary">
                             <div class="summary-row">
                                 <span>Subtotal</span>
-                                <span class="price">$217.57</span>
+                                <span class="price">PKR 217.57</span>
                             </div>
                             <div class="summary-row total">
                                 <span>Total</span>
-                                <span class="price">$217.57</span>
+                                <span class="price">PKR 217.57</span>
                             </div>
                         </div>
                     </div>

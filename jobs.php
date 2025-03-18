@@ -82,7 +82,7 @@ $jobs = [
             margin-top: 3rem;
         }
         .tutor-name{
-            font-size: 6.5rem !important;
+            font-size: 6.5rem;
             width: max-content;
         }
         .tutor-name{
@@ -123,7 +123,7 @@ $jobs = [
                         <div class="job-amount">
                             <span style="margin-right: 0.4rem;">Amount: </span>
                             <span class="amount-value"><?php echo $job['amount']; ?></span>
-                            <span class="amount-currency">$</span>
+                            <span class="amount-currency">PKR</span>
                         </div>
                     </div>
                     <p class="job-description"><?php echo $job['description']; ?></p>
