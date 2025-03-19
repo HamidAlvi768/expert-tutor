@@ -140,7 +140,8 @@
 
 @media (max-width: 991.98px) {
     .profile-user-info.mobile-only {
-        display: flex !important;
+        display: flex ;
+        display: none !important;
     }
 }
 
@@ -230,6 +231,10 @@ body.mobile-menu-active .hamburger-line:nth-child(3) {
         justify-content: space-between;
     }
 
+    .profile-nav-left {
+        width: 100%;
+    }
+
     .profile-nav-links-container {
         position: fixed;
         top: 0;
@@ -316,7 +321,7 @@ body.mobile-menu-active .hamburger-line:nth-child(3) {
     }
 
     .profile-user-info.mobile-only {
-        display: none; /* Initial state: hidden */
+        display: none !important; /* Initial state: hidden */
     }
 
     body.mobile-menu-active .profile-user-info.mobile-only {

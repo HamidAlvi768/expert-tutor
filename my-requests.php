@@ -65,13 +65,13 @@ session_start();
             font-weight: 600;
             font-size: 1.25rem;
             margin-right: 15px;
-            margin-top: -0.7rem;
         }
         
         .expertTutor_myRequests_currency {
             display: inline-flex;
             align-items: center;
             margin-right: 4px;
+            color: #564FFD;
         }
         
         .expertTutor_myRequests_currency svg {

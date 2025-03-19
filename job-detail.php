@@ -192,7 +192,6 @@ $job = [
         .expertTutor_jobDetail_card {
             background: white;
             border-radius: 12px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
             margin-bottom: 24px;
         }
 

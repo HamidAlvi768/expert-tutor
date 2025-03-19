@@ -847,7 +847,7 @@ body.mobile-menu-active .hamburger-line:nth-child(3) {
 
     .profile-nav-links {
         flex-direction: column;
-        gap: 10px;
+        gap: 5px;
         width: 100%;
     }
 
@@ -866,7 +866,7 @@ body.mobile-menu-active .hamburger-line:nth-child(3) {
     }
 
     .profile-user-info.mobile-only {
-        display: flex;
+        display: none !important;
         padding: 20px 0;
         border-top: 1px solid var(--profile-border-color);
         margin-top: 20px;
@@ -900,6 +900,7 @@ body.mobile-menu-active .hamburger-line:nth-child(3) {
     }
 
     .profile-user-info.mobile-only {
+        display: none !important;
         flex-direction: row;
         align-items: center;
         text-align: center;

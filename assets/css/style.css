@@ -342,6 +342,7 @@ body {
     align-items: center;
     width: 100%;
     margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .partner-logo {
@@ -784,6 +785,12 @@ body {
 
     .cta-image-wrapper {
         min-height: 400px;
+    }
+
+    .partner-logos {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
     }
 
     .partner-logo img {
