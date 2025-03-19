@@ -47,11 +47,7 @@ $additional_css = ['assets/css/components/checkout-details.css'];
                     <div class="checkout-section">
                         <h2>Payment Method</h2>
                         <div class="payment-methods">
-                            <img src="assets/images/icons/discover.png" alt="Discover">
-                            <img src="assets/images/icons/mastercard.png" alt="Mastercard">
-                            <img src="assets/images/icons/interac.png" alt="Interac" style="height: 35px;">
-                            <img src="assets/images/icons/stripe.png" alt="Stripe">
-                            <img src="assets/images/icons/maestro.png" alt="Maestro">
+                            <img src="assets/images/icons/easypaisa.png" alt="Easypaisa">
                         </div>
                     </div>
 

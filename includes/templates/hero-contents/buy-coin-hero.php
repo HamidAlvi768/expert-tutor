@@ -233,7 +233,7 @@ $initialView = true; // You can set this based on session/state management
     }
     
     .payment-logos img {
-        height: 25px;
+        height: 65px;
     }
 }
 
